@@ -1,39 +1,79 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+<div class="container" id="newsletter">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>Your Account</h1>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= devise_error_messages! %>
+  
+    <% @age_ranges = [['18-24','18-24'], ['25-34', '25-34'], ['35-44', '35-44'], ['45-54', '45-54'], ['55-64', '55-64'], ['65+', '65+']] %>
+    <h2>Tell us a little about yourself.</h2>
+    <%= f.input :age_range, collection: @age_ranges, prompt: 'Select your age range' %>
+    <%= f.input :gender, label: 'What is your gender?', collection: [ ['Male', 'Male' ], ['Female', 'Female'] ], as: :radio_buttons %>
+    
+    <hr>
+  
+    <h2>Contact Information</h2>
+    <%= f.input :address_1, label: 'Street Address', placeholder: '123 Main Street' %>
+    <%= f.input :address_2, label: 'Apt/Suite', placeholder: 'Suite 4B' %>
+    <%= f.input :city %>
+    <%= f.input :state_province, label: 'State/Province' %>
+    <%= f.input :zip_postal_code, label: 'Zip/Postal Code' %>
+    <%= f.input :country, prompt: 'Select your country' %>
+    <%= f.input :phone %>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+
+
+
+    <hr>
+    <h2>Account Settings</h2>
+    <%= f.input :email, autofocus: true %>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+    <div class="panel panel-default" id="newsletter-signup">
+      <h3>Newsletter Sign Up</h3>
+      <p>Keep up to date on the latest news at TIME Sport. You'll get news, information about special events and exclusive promotions.</p>
+      <%= f.input :newsletter_sign_up, as: :boolean, label: 'Sign up for our email newsletter and other promotions.' %>
+    </div>
+    <%= f.input :password, autocomplete: "off", hint: "Leave blank if you don't want to change it." %>
+    <%= f.input :password_confirmation, autocomplete: "off" %>
+    <%= f.input :current_password, autocomplete: "off", hint: "We need your current password to confirm your changes." %>
+  
+    <%= f.submit "Update my information", class: 'btn btn-primary btn-lg' %>
+  
+    
+  
+  <!--   <div class="field">
+      <%#= f.label :email %><br />
+      <%#= f.email_field :email, autofocus: true %>
+    </div>
+  
+  
+  
+    <div class="field">
+      <%#= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+      <%#= f.password_field :password, autocomplete: "off" %>
+    </div>
+  
+    <div class="field">
+      <%#= f.label :password_confirmation %><br />
+      <%#= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
+  
+    <div class="field">
+      <%#= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+      <%#= f.password_field :current_password, autocomplete: "off" %>
+    </div>
+  
+    <div class="actions">
+      <%#= f.submit "Update" %>
+    </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+   -->
+  <!-- <h3>Cancel my account</h3> -->
+  
+  <!-- <p>Unhappy? <%#= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' %></p> -->
+  
+  <%#= link_to "Back", :back %></div>
+</div>
