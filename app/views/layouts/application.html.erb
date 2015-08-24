@@ -7,13 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<%= render 'shared/header' %>
+
+<div class="container">
 <% if notice %>
-  <p class="notice"><%= notice %></p>
+  <p class="notice alert alert-info"><%= notice %></p>
 <% elsif alert %>
-  <p class="alert"><%= alert %></p>
+  <p class="alert alert-danger"><%= alert %></p>
 <% end %>
 
+<% if admin_signed_in? %>
+  <% if current_admin.god_mode? %>
+    <%= "God Mode"  %>
+  <% elsif %>
+    <%= "Reports Only" %>
+  <% end %>
+<% end %>
+</div>
+
+
 <%= yield %>
+
 
 </body>
 </html>
