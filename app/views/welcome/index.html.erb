@@ -10,19 +10,26 @@
   <% else %>
     
       <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-lg-8 col-lg-offset-2 text-center">
           <h1>Welcome to the TIME Sport Owners Club</h1>
         </div>
       </div>
+
       <div class="row">
-        <div class="col-md-4 col-md-offset-2 welcome-choices">
-          <p>Sign up to register your TIME Sport frame or bicycle. In addition, you'll get exclusive offers on TIME frames, pedals and accesories.</p>
-          <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-lg btn-success' %>
+        <div class="col-lg-4 col-lg-offset-4 welcome-choices">
+          <p class="lead">Sign up to register your TIME Sport frame or bicycle. In addition, you'll get exclusive offers on TIME frames, pedals and accesories.</p>
+          <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-lg btn-block btn-success' %><br>
+          <p class="text-center">Already registered? <%= link_to 'Sign in', new_user_session_path %></p>
+          
+           
+
+
         </div>
-        <div class="col-md-4 welcome-choices">
-          <p>Already registered? You can register additional TIME Frames.</p>
-          <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-lg btn-primary' %>
-        </div>
+      </div>
+      
+
+        
+
       </div>
     
   <% end %>
