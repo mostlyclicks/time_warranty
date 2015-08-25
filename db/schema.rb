@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150811195718) do
+ActiveRecord::Schema.define(version: 20150825142740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,22 @@ ActiveRecord::Schema.define(version: 20150811195718) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
+
+  create_table "bikes", force: :cascade do |t|
+    t.string   "bike_model"
+    t.string   "bike_other"
+    t.string   "serial_number"
+    t.date     "date_purchased"
+    t.string   "bike_dealer"
+    t.integer  "bike_saddle_height"
+    t.integer  "bike_saddle_bar"
+    t.integer  "bike_bar_drop"
+    t.integer  "user_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "bikes", ["user_id"], name: "index_bikes_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -64,4 +80,5 @@ ActiveRecord::Schema.define(version: 20150811195718) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "bikes", "users"
 end
