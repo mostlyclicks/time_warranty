@@ -1,0 +1,25 @@
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+@import 'overrides.css.scss';
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+  body {border:5px solid yellow;}
+  #welcome {background-size:120%;background-position-x:50%;}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+  body {border:5px solid blue;}
+  #welcome {background-position-y:300px;}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+  body {border:5px solid green;}
+  #welcome {
+    background-size:80%;background-position-y:350px;
+    h1 {margin-bottom:1em;}
+  }
+}

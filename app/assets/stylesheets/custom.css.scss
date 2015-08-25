@@ -1,0 +1,28 @@
+// @import 'overrides.css.scss';
+
+h1, h2, h3 {font-weight:100;}
+a {
+  color:$time-red;
+  &:hover {color:darken($time-red, 15%);}
+}
+p {
+  color:$copy-text-color;
+}
+.icon-bar {color:#fff;}
+
+.navbar-brand {
+  margin-top:-5px;
+}
+
+#welcome {
+  margin-top:-20px;
+  height:100vh;
+  background-image:url(Skylon-AKTIV-white-bike.png);
+  background-repeat:no-repeat;
+  background-size:200%;
+  background-position-x:55%;
+
+  background-position-y:350px;
+  background-color:#f8f8f8;
+  padding:40px 20px;
+}

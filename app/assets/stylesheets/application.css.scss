@@ -14,5 +14,8 @@
  * require_self
  */
 @import "bootstrap-sprockets";
-@import "custom";
+@import 'overrides.css.scss';
 @import "bootstrap";
+
+@import "custom.css.scss";
+@import "responsive.css.scss";
