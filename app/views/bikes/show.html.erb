@@ -1,0 +1,15 @@
+<h1>TIME Sport <%= @bike.bike_model %></h1>
+
+
+
+<%= @bike.bike_other unless blank? %>
+
+Serial Number: <%= @bike.serial_number %><br />
+Purchased: <%= @bike.date_purchased.strftime('%D') %><br />
+Dealer: <%= @bike.bike_dealer %><br />
+
+<h3>Bike Fit Details</h3>
+Saddle Height: <%= @bike.bike_saddle_height %>mm / <%= @bike.bike_saddle_height.to_d / 10 %>cm<br />
+Saddle/Bar Reach: <%= @bike.bike_saddle_bar %>mm / <%= @bike.bike_saddle_bar.to_d / 10 %>cm<br />
+Bike Bar Drop: <%= @bike.bike_bar_drop %>mm / <%= @bike.bike_bar_drop.to_d / 10 %>cm
+
