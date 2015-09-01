@@ -1,15 +1,59 @@
-<h1>TIME Sport <%= @bike.bike_model %></h1>
+<% @bike_img_bg = @bike.bike_image.url(:large) %>
+
+<style>
+
+#show-bike {
+  /*background-image:url(<%= @bike_img_bg %>);*/
+
+}
+</style>
 
 
-<%= image_tag @bike.bike_image.url(:large) %>
+<section id="show-bike">
+<%#= @bike_img_bg %>
+
+  <%= image_tag @bike.bike_image.url(:large), class: 'img-responsive' %>
+
+
+</section>
+
+<section id="show-bike-details">
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <h1>TIME Sport <%= @bike.bike_model %></h1>
+        <%= @bike.bike_other unless blank? %>
+
+        Serial Number: <%= @bike.serial_number %><br />
+        Purchased: <%= @bike.date_purchased.strftime('%D') %><br />
+        Dealer: <%= @bike.bike_dealer %>
+    </div>
+  </div>
+</section>
+
+
+<section id="show-bike-fit">
+  <div class="container">
+    <div class="row">
+     <div class="col-md-4 fit-card">
+      <h4>Saddle Height</h4>
+      <p><%= @bike.bike_saddle_height %>mm / <%= @bike.bike_saddle_height.to_d / 10 %>cm</p>
+     </div>
+     <div class="col-md-4 fit-card">
+      <h4>Saddle/Bar Reach</h4>
+      <p><%= @bike.bike_saddle_bar %>mm / <%= @bike.bike_saddle_bar.to_d / 10 %>cm</p>
+     </div>
+     <div class="col-md-4 fit-card">
+      <h4>Bar Drop</h4>
+      <p><%= @bike.bike_bar_drop %>mm / <%= @bike.bike_bar_drop.to_d / 10 %>cm</p>
+     </div>
+    </div>
+  </div>
 
 
 
-<%= @bike.bike_other unless blank? %>
+</section>
 
-Serial Number: <%= @bike.serial_number %><br />
-Purchased: <%= @bike.date_purchased.strftime('%D') %><br />
-Dealer: <%= @bike.bike_dealer %><br />
+<br />
 
 <h3>Bike Fit Details</h3>
 

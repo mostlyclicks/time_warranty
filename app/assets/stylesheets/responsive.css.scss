@@ -5,21 +5,22 @@
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm-min) {
-  body {border:5px solid yellow;}
+  // body {border:5px solid yellow;}
   #welcome {background-size:120%;background-position-x:50%;}
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: $screen-md-min) {
-  body {border:5px solid blue;}
-  #welcome {background-position-y:300px;}
+  // body {border:5px solid blue;}
+  #welcome {background-position-y:400px;}
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: $screen-lg-min) {
-  body {border:5px solid green;}
+  // body {border:5px solid green;}
   #welcome {
-    background-size:80%;background-position-y:350px;
+    background-size:80%;background-position-y:220px;
+    background-position-x:-200%;
     h1 {margin-bottom:1em;}
   }
 }

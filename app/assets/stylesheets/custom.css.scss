@@ -1,11 +1,12 @@
 // @import 'overrides.css.scss';
 
 h1, h2, h3 {font-weight:100;}
+h4 {font-weight:200;}
 a {
   color:$time-red;
   &:hover {color:darken($time-red, 15%);}
 }
-p {
+p, li {
   color:$copy-text-color;
 }
 .icon-bar {color:#fff;}
@@ -19,13 +20,26 @@ p {
   height:100vh;
   background-image:image-url('Skylon-AKTIV-white-bike.png');
   background-repeat:no-repeat;
-  background-size:200%;
+  background-size:100%;
   background-position-x:55%;
 
-  background-position-y:350px;
+  background-position-y:550px;
   background-color:#f8f8f8;
   padding:40px 20px;
 }
 
 #bike_date_purchased_3i, #bike_date_purchased_2i, #bike_date_purchased_1i {width:7em;float:left;margin-right:10px;}
 label.date.optional.control-label {float:left;display:block;line-height:34px;margin-right:10px;}
+
+#show-bike {
+  background-size:100%;
+  background-repeat:no-repeat;
+  // height:400px;
+}
+
+#show-bike-fit {
+  .fit-card {border:1px solid #cdcdcd;margin:5px;padding:20px;}
+  h4 {text-transform:uppercase;text-align:center;}
+  p {text-align:center;}
+
+}

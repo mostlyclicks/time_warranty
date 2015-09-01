@@ -32,8 +32,27 @@
 
       <div class="row">
         <div class="col-lg-4 col-lg-offset-4 welcome-choices">
-          <p class="lead">Sign up to register your TIME Sport frame or bicycle. In addition, you'll get exclusive offers on TIME frames, pedals and accesories.</p>
-          <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-lg btn-block btn-primary' %><br>
+
+          <p class="lead">Be part of the TIME Sport club. As a club member you'll enjoy these benefits.</p>
+          <ul class="lead">
+            <li>Free lifetime warranty by registering your bike or frame</li>
+            <li>Exclusive offers</li>
+            <li>Keep up with TIME news</li>
+            <li>TIME events: Rides, Demo days</li>
+            <li>Exclusive Company Tours</li>
+            <li>Exclusive TIME Club kit </li>
+            <li>T-Shirt purchase proceeds go to charity</li>
+            <li>Strava Mile Rewards</li>
+
+            <!-- -- diffent club levels -->
+
+
+          </ul>
+
+
+
+          <!-- <p class="lead">Sign up to register your TIME Sport frame or bicycle to be eligible for a lifetime warranty. In addition, you'll get exclusive offers on TIME frames, pedals and accesories.</p> -->
+          <div class="text-center"><%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-lg btn-primary text-center' %></div><br>
           <p class="text-center">Already registered? <%= link_to 'Sign in', new_user_session_path %></p>
           
 
