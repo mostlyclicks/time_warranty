@@ -31,7 +31,8 @@ class BikesController < ApplicationController
 
     def bike_params
       params.require(:bike).permit(:bike_model, :bike_other, :serial_number, :date_purchased, :bike_dealer,
-        :bike_saddle_height, :bike_saddle_bar, :bike_bar_drop, :bike_image, :bike_receipt)
+        :bike_saddle_height, :bike_saddle_bar, :bike_bar_drop, :bike_image, :bike_receipt, 
+        :bike_image_file_name, :bike_receipt_file_name)
     end
 
 
