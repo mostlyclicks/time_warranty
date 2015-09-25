@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150831011403) do
+ActiveRecord::Schema.define(version: 20150925181210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,12 +46,16 @@ ActiveRecord::Schema.define(version: 20150831011403) do
     t.integer  "bike_saddle_bar"
     t.integer  "bike_bar_drop"
     t.integer  "user_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.string   "bike_image_file_name"
     t.string   "bike_image_content_type"
     t.integer  "bike_image_file_size"
     t.datetime "bike_image_updated_at"
+    t.string   "bike_receipt_file_name"
+    t.string   "bike_receipt_content_type"
+    t.integer  "bike_receipt_file_size"
+    t.datetime "bike_receipt_updated_at"
   end
 
   add_index "bikes", ["user_id"], name: "index_bikes_on_user_id", using: :btree

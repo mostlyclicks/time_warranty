@@ -12,9 +12,12 @@
 <section id="show-bike">
 <%#= @bike_img_bg %>
 
+
+
   <%= image_tag @bike.bike_image.url, class: 'img-responsive' %>
   <%= @bike.bike_image.url(:medium) %>
-
+  <%= image_tag @bike.bike_receipt.url(:med_r) %>
+  <%= link_to 'Receipt File', @bike.bike_receipt.url %>
 
 </section>
 
