@@ -4,7 +4,7 @@
 <h1>Register your TIME Frame</h1>
 
 
-<%= simple_form_for ([@user, @bike]) do |f| %>
+<%= simple_form_for ([@user, @bike]), html: {multipart: true} do |f| %>
   <%= f.input :bike_model, collection: TIME_MODELS, prompt: "Select TIME frame model" %>
   <%= f.input :bike_other, label: "If you selected other, enter your bike model" %>
   <%= f.input :serial_number, label: 'Serial Number' %>

@@ -12,7 +12,8 @@
 <section id="show-bike">
 <%#= @bike_img_bg %>
 
-  <%= image_tag @bike.bike_image.url(:large), class: 'img-responsive' %>
+  <%= image_tag @bike.bike_image.url, class: 'img-responsive' %>
+  <%= @bike.bike_image.url(:medium) %>
 
 
 </section>
