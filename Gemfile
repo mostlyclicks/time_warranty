@@ -16,6 +16,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'simple_form'
 gem 'country_select'
 gem 'paperclip'
+gem 'aws-sdk', '~> 2.1.23'
+
 
 group :development, :test do
   gem 'byebug'
