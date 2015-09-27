@@ -1,67 +1,58 @@
-<% @bike_img_bg = @bike.bike_image.url(:large) %>
-
-<style>
-
-#show-bike {
-  /*background-image:url(<%= @bike_img_bg %>);*/
-
-}
-</style>
-
-
 <section id="show-bike">
-<%#= @bike_img_bg %>
-
-
-
-  <%= image_tag @bike.bike_image.url, class: 'img-responsive' %>
-  <%= @bike.bike_image.url(:medium) %>
-  <%= image_tag @bike.bike_receipt.url(:med_r) %>
-  <%= link_to 'Receipt File', @bike.bike_receipt.url %>
-
-</section>
-
-<section id="show-bike-details">
-  <div class="container">
-    <div class="col-md-8 col-md-offset-2">
-      <h1>TIME Sport <%= @bike.bike_model %></h1>
-        <%= @bike.bike_other unless blank? %>
-
-        Serial Number: <%= @bike.serial_number %><br />
-        Purchased: <%= @bike.date_purchased.strftime('%D') %><br />
-        Dealer: <%= @bike.bike_dealer %>
-    </div>
-  </div>
-</section>
-
-
-<section id="show-bike-fit">
   <div class="container">
     <div class="row">
-     <div class="col-md-4 fit-card">
-      <h4>Saddle Height</h4>
-      <p><%= @bike.bike_saddle_height %>mm / <%= @bike.bike_saddle_height.to_d / 10 %>cm</p>
-     </div>
-     <div class="col-md-4 fit-card">
-      <h4>Saddle/Bar Reach</h4>
-      <p><%= @bike.bike_saddle_bar %>mm / <%= @bike.bike_saddle_bar.to_d / 10 %>cm</p>
-     </div>
-     <div class="col-md-4 fit-card">
-      <h4>Bar Drop</h4>
-      <p><%= @bike.bike_bar_drop %>mm / <%= @bike.bike_bar_drop.to_d / 10 %>cm</p>
-     </div>
+      <div class="col-md-8">
+        <h1><%= @bike.bike_model %></h1>
+          <%= @bike.bike_other unless blank? %>
+      </div>
+      <div class="col-md-4">
+        <%= link_to 'See all my bikes',  '/' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        
+          <%= image_tag @bike.bike_image.url, class: 'img-responsive' %> 
+      </div>
+      <div class="col-md-4">
+        <h3>Registration Information</h3>
+        <table class="table table-stripe">
+          <tr>
+            <td class="col-md-6">Serial Number</td>
+            <td><%= @bike.serial_number %></td>
+          </tr>
+          <tr>
+            <td>Date purchased</td>
+            <td><%= @bike.date_purchased.strftime('%D') %></td>
+          </tr>
+          <tr>
+            <td>Date registered</td>
+            <td><%= @bike.created_at.strftime('%D') %></td>
+          </tr>
+        </table>
+
+        <h3>Basic Fit Details</h3>
+        <table class="table table-striped">
+          <tr>
+            <td class="col-md-6">Saddle height</td>
+            <td><%= @bike.bike_saddle_height %>mm / <%= @bike.bike_saddle_height.to_d / 10 %>cm</td>
+          </tr>
+          <tr>
+            <td>Saddle/bar reach</td>
+            <td><%= @bike.bike_saddle_bar %>mm / <%= @bike.bike_saddle_bar.to_d / 10 %>cm</td>
+          </tr>
+          <tr>
+            <td>Bar Drop</td>
+            <td><%= @bike.bike_bar_drop %>mm / <%= @bike.bike_bar_drop.to_d / 10 %>cm</td>
+          </tr>
+
+        </table>
+        <p><strong>Purchased at:<br />
+        </strong> <%= @bike.bike_dealer %><br />
+          <%= link_to 'View Receipt File', @bike.bike_receipt.url %></p>
+      </div>
     </div>
   </div>
-
-
-
 </section>
 
-<br />
-
-<h3>Bike Fit Details</h3>
-
-Saddle Height: <%= @bike.bike_saddle_height %>mm / <%= @bike.bike_saddle_height.to_d / 10 %>cm<br />
-Saddle/Bar Reach: <%= @bike.bike_saddle_bar %>mm / <%= @bike.bike_saddle_bar.to_d / 10 %>cm<br />
-Bike Bar Drop: <%= @bike.bike_bar_drop %>mm / <%= @bike.bike_bar_drop.to_d / 10 %>cm
 

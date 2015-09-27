@@ -15,18 +15,42 @@ p, li {
   margin-top:-5px;
 }
 
+body {
+  background-color:#f8f8f8;
+}
+
 #welcome {
   margin-top:-20px;
   height:100vh;
-  background-image:image-url('Skylon-AKTIV-white-bike.png');
+  //background-image:image-url('Skylon-AKTIV-white-bike.png');
   background-repeat:no-repeat;
   background-size:100%;
-  background-position-x:55%;
+  background-position-x:120%;
 
   background-position-y:550px;
-  background-color:#f8f8f8;
+  .btn {
+    margin-top:19px;
+  }
   padding:40px 20px;
+  .bikes {
+    background-color:rgba(255,255,255,.95);
+    padding:10px;
+    border-right:1px solid rgba(0,0,0,.1);
+    border-bottom:1px solid rgba(0,0,0,.1);
+    height:300px;
+  }
+  .bike-1, .bike-2 {
+    height:auto;
+  }
+
+
+  #sidebar {
+    background-color:rgba(255,255,255,.8);
+    padding:10px 20px;
+  }
 }
+
+
 
 #bike_date_purchased_3i, #bike_date_purchased_2i, #bike_date_purchased_1i {width:7em;float:left;margin-right:10px;}
 label.date.optional.control-label {float:left;display:block;line-height:34px;margin-right:10px;}

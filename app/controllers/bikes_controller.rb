@@ -13,6 +13,7 @@ class BikesController < ApplicationController
   def create
     @bike = @user.bikes.new bike_params
     if @bike.save
+      flash[:notice] = "You have successfully register your bike"
       redirect_to user_bike_path(@user, @bike)
     else
       render 'new'
