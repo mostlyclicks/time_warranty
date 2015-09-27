@@ -49,7 +49,10 @@
         </table>
         <p><strong>Purchased at:<br />
         </strong> <%= @bike.bike_dealer %><br />
-          <%= link_to 'View Receipt File', @bike.bike_receipt.url %></p>
+        <% if @bike.bike_receipt.present? %>
+          <%= link_to 'View Receipt File', @bike.bike_receipt.url %>
+        <% end %>
+        </p>
 
         <%= link_to 'Edit this bike', edit_user_bike_path(@user, @bike), class: 'btn btn-primary' %>
       </div>
