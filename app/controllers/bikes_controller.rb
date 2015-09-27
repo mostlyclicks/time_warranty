@@ -1,9 +1,23 @@
 class BikesController < ApplicationController
   before_action :find_user
-  before_action :find_bike, only: [:show]
+  before_action :find_bike, only: [:show, :edit]
   
   def new
     @bike = @user.bikes.new
+  end
+
+  def edit
+    @bike = Bike.find(params[:id])
+  end
+
+  def update
+    @bike = Bike.find(params[:id])
+    if @bike.update_attributes(bike_params)
+      flash[:success] = "Bike updated"
+      redirect_to '/'
+    else
+      render 'edit'
+    end
   end
 
   def show

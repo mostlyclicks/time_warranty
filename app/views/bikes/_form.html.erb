@@ -1,0 +1,29 @@
+<%= simple_form_for ([@user, @bike]), html: {multipart: true} do |f| %>
+  <%= f.input :bike_model, collection: TIME_MODELS, prompt: "Select TIME frame model" %>
+  <%= f.input :bike_other, label: "If you selected other, enter your bike model" %>
+  <%= f.input :serial_number, label: 'Serial Number' %>
+  <%= f.input :bike_dealer, label: 'TIME Dealership', placeholder: 'Dealer name, State/Province, Country'%>
+  <div class='clearfix'><%= f.input :date_purchased, start_year: Time.now.year - 10, end_year: Time.now.year, order: [:month, :day, :year], label: 'Date Purchased', class: 'clearfix' %></div>
+  <br />
+  <% if @bike.bike_receipt.exists? %>
+    <%= image_tag @bike.bike_image.url(:thumb) %><br />
+  <% end %>
+  <%= f.input :bike_receipt, label: "Upload a scan or picture of your receipt or bill of sale (.png, .jpg)" %>
+
+  <br /> 
+  <% if @bike.bike_image.exists? %>
+    <%= image_tag @bike.bike_image.url(:thumb) %><br/>
+  <% end %>
+  <%= f.input :bike_image, label: "Upload a photo of you on your bike" %>
+
+  <h3>Bike Fit Measurements</h3>
+  <p>For your convenience, you can store your bicycle fit measurements here. Specify all measurements in millimeters (mm).</p>
+
+  <%= f.input :bike_saddle_height, label: "Saddle Height (millimeters)", placeholder: 'Center of crank to top of saddle' %>
+  <%= f.input :bike_saddle_bar, label: "Saddle to Bar (millimeters)", placeholder: 'Tip of saddle to center of handlebar' %>
+  <%= f.input :bike_bar_drop, label: "Bar Drop (millimeters)", placeholder: 'Vertical distance - top of saddle to top of bars' %>
+
+  <br />
+
+<%= f.submit 'Submit', class: 'btn btn-primary' %>
+<% end %>
