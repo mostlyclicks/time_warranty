@@ -5,7 +5,7 @@ module ApplicationHelper
        current_user.state_province.blank? ||
        current_user.zip_postal_code.blank? ||
        current_user.country.blank?
-       'Please complete your information to be eligible for your warranty.'
+       raw("Please complete your information to be eligible for your warranty. #{link_to 'Complete Registration' , edit_user_registration_path}")
     else
       "Welcome to TIME Club #{current_user.email}"
     end
