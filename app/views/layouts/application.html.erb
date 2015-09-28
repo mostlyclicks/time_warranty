@@ -13,15 +13,19 @@
 <%= render 'shared/header' %>
 
 <div class="container">
-<% if notice %>
-  <p class="notice alert alert-info"><%= notice %></p>
-<% elsif alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+  <%= flash_messages %>
+<!--
+<%# if notice %>
+  <p class="notice alert alert-info"><%#= notice %></p>
+<%# elsif alert %>
+  <p class="alert alert-danger"><%#= alert %></p>
+<%# end %>
+-->
+
 
 <% if admin_signed_in? %>
   <% if current_admin.god_mode? %>
-    <%= "God Mode"  %>
+     <div style="background-color:rgba(0,0,0,.1);padding:15px;box-radius:10px;color:rgba(0,0,0,.6);margin-bottom:20px;">You are logged in as ADMIN</div>
   <% elsif %>
     <%= "Reports Only" %>
   <% end %>

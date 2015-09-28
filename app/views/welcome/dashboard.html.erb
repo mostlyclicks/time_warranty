@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+       <table class="table table-stripe">
+    <tr>
+      <th>User email</th>
+      <th>Number of bikes</th>
+      <th>&nbsp;</th>
+    </tr>
+
+    <% @users.each do |u| %>
+    <tr>
+
+      <td><%= u.email %></td>
+
+      <td><%= u.bikes.count %></td>
+      <td>
+        <table class="table table-stripe">
+
+          <% u.bikes.each do |b| %>
+          <tr>
+
+            <td><%= link_to b.bike_model , user_bike_path(u, b) %></td>
+
+            <td><%= b.serial_number %></td>
+
+            <td><%= link_to 'View Receipt', b.bike_receipt.url %></td>
+          </tr>
+
+          <% end %>         
+        </table>
+        
+      </td>
+    </tr>
+
+    <% end %> 
+  </table>
+    </div>
+  </div>
+</div>
+
+ 

@@ -1,6 +1,7 @@
 class BikesController < ApplicationController
   before_action :find_user
   before_action :find_bike, only: [:show, :edit]
+  # before_filter :authenticate_admin!
   
   def new
     @bike = @user.bikes.new
