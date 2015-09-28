@@ -41,7 +41,7 @@
           <% else %>
             <div class="well" style="background-color:#fff;">
                 <h4><strong>Get started by registering your first TIME bike or frame.</strong> <%= link_to 'Register your TIME', new_user_bike_path(current_user) %> </h4>
-                <p>You'll need the model, serial number and a picture of your receipt to be eligible for the TIME limited warranty.</p>
+                <p>You'll need the model, serial number and a picture of your receipt to be eligible for the TIME limited warranty. <%= link_to 'Complete Registration' , edit_user_registration_path %></p>
               </div>
           <% end %>
         </div>
