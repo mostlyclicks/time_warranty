@@ -35,15 +35,27 @@
         <table class="table table-striped">
           <tr>
             <td class="col-md-6">Saddle height</td>
-            <td><%= @bike.bike_saddle_height %>mm / <%= @bike.bike_saddle_height.to_d / 10 %>cm</td>
+            <td>
+              <% unless @bike.bike_saddle_height.blank? %>
+                <%= @bike.bike_saddle_height %>mm / <%= @bike.bike_saddle_height.to_d / 10 %>cm
+              <% end %>
+            </td>
           </tr>
           <tr>
             <td>Saddle/bar reach</td>
-            <td><%= @bike.bike_saddle_bar %>mm / <%= @bike.bike_saddle_bar.to_d / 10 %>cm</td>
+            <td>
+              <% unless @bike.bike_saddle_bar.blank? %>
+                <%= @bike.bike_saddle_bar %>mm / <%= @bike.bike_saddle_bar.to_d / 10 %>cm
+              <% end %>
+            </td>
           </tr>
           <tr>
             <td>Bar Drop</td>
-            <td><%= @bike.bike_bar_drop %>mm / <%= @bike.bike_bar_drop.to_d / 10 %>cm</td>
+            <td>
+              <% unless @bike_bar_drop.blank? %>
+                <%= @bike.bike_bar_drop %>mm / <%= @bike.bike_bar_drop.to_d / 10 %>cm
+              <% end %>
+            </td>
           </tr>
 
         </table>
